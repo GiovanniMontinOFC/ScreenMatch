@@ -4,9 +4,9 @@ class Filme {
     private array $notas;
 
     public function __construct(
-        private string $nome,
-        private int $anoDeLancamento,
-        private string $genero
+        public readonly string $nome,
+        public readonly int $anoDeLancamento,
+        public readonly string $genero
     ) {
         $this->notas = [];
     }
@@ -23,23 +23,4 @@ class Filme {
 
         return $somaNotas / $quantidadeNotas;
     }
-
-    //Métodos de Acessos - getters
-
-    public function nome(): String 
-    {
-        return $this->nome;
-    }
-
-
-    public function anoDeLancamento(): int 
-    {
-        return $this->anoDeLancamento;
-    }
-
-    public function genero(): String
-    {
-        return $this->genero;
-    }
-
 }
