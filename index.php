@@ -4,11 +4,11 @@ require __DIR__ . "/src/Modelo/Filme.php";
 
 echo "Bem vinde ao ScreenMatch\n";
 
-$filme = new Filme();
-$filme->define_anoDeLancamento(2021) ;
-
-/* $filme->nome = 'Thor - Ragnarok';
- $filme->genero = 'super-heroi'; */
+$filme = new Filme(
+    'Thor - Ragnarok',
+    2021,
+    'super-herói'
+);
 
 $filme->avalia(10);
 $filme->avalia(6);
