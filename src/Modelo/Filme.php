@@ -1,10 +1,10 @@
 <?php
 
 class Filme {
-    public string $nome;
-    public int $anoDeLancamento;
-    public string $genero;
-    public array $notas = [];
+    private string $nome = 'Nomw padrão';
+    private int $anoDeLancamento = 2024;
+    private string $genero = 'ação';
+    private array $notas = [];
 
     public function avalia(float $nota): void 
     {
@@ -18,4 +18,42 @@ class Filme {
 
         return $somaNotas / $quantidadeNotas;
     }
+
+    //Métodos de Acessos 
+
+    //Nome
+    public function nome(): String 
+    {
+        return $this->nome;
+    }
+
+    public function define_nome(string $nome): void
+    {
+        $this->nome = $nome;
+    }
+
+    //Ano de Lançamento
+    public function anoDeLancamento(): int //getter
+    {
+        return $this->anoDeLancamento;
+    }
+
+    public function define_anoDeLancamento(int $anoDeLancamento) : void //setter
+    {
+        $this->anoDeLancamento = $anoDeLancamento;
+    }
+
+    //Genero
+    public function genero(): String
+    {
+        return $this->genero;
+    }
+
+    public function define_genero( string $genero): void 
+    {
+        $this->genero = $genero;
+    }
+
+    
+
 }
