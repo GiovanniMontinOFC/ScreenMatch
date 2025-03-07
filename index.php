@@ -6,7 +6,6 @@ require __DIR__ . "/src/Modelo/Filme.php";
 require __DIR__ . "/src/Modelo/Serie.php";
 require __DIR__ . "/src/Calculos/CalculadoraDeMaratona.php";
 
-
 echo "Bem vinde ao ScreenMatch\n";
 
 $filme = new Filme(
