@@ -2,6 +2,7 @@
 
 use PSpell\Config;
 
+require __DIR__ . "/src/Modelo/ComAvaliacao.php";
 require __DIR__ . "/src/Modelo/Avaliavel.php";
 require __DIR__ . "/src/Modelo/Genero.php";
 require __DIR__ . "/src/Modelo/Titulo.php";
