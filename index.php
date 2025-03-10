@@ -1,10 +1,17 @@
 <?php
 
+use PSpell\Config;
+
+require __DIR__ . "/src/Modelo/Avaliavel.php";
 require __DIR__ . "/src/Modelo/Genero.php";
 require __DIR__ . "/src/Modelo/Titulo.php";
 require __DIR__ . "/src/Modelo/Filme.php";
 require __DIR__ . "/src/Modelo/Serie.php";
+require __DIR__ . "/src/Modelo/Episodio.php";
+
 require __DIR__ . "/src/Calculos/CalculadoraDeMaratona.php";
+require __DIR__ . "/src/Calculos/ConversorNotaEstrela.php";
+
 
 echo "Bem vinde ao ScreenMatch\n";
 
@@ -25,6 +32,7 @@ echo $filme->media() . "\n";
 echo $filme->anoDeLancamento . "\n";
 
 $serie = new Serie('Lost', 2007, Genero::Drama, 10, 20, 30);
+$episodio = new Episodio($serie, 'Piloto', 1);
 
 echo $serie->anoDeLancamento . "\n";
 $serie->avalia(8);
@@ -35,4 +43,8 @@ $calculadora->inclui($filme);
 $calculadora->inclui($serie);
 $duracao = $calculadora->duracao();
 
-echo "Para essa maratona, você precisa de $duracao minutos";
+echo "Para essa maratona, você precisa de $duracao minutos\n";
+
+$conversor = new ConversorNotaEstrela();
+echo $conversor->converte($serie) . "\n";
+echo $conversor->converte($filme) . "\n";
